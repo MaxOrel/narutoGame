@@ -1,0 +1,388 @@
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  min-height: 100%;
+  text-align: center;
+}
+
+h1 {
+  display: inline-block;
+  font-size: 60px;
+  margin: 10px;
+  color: #e24637;
+  font-weight: 900;
+}
+
+body {
+  color: black;
+  position: relative;
+  padding: 0;
+  font-family: "Heebo", sans-serif;
+  background-image: url(./assets/background.png);
+  background-color: #00c9ba;
+  background-size: auto;
+  background-repeat: repeat-x;
+  background-position: bottom;
+  text-align: center;
+  user-select: none;
+}
+
+img {
+  max-height: 150px;
+  margin: auto;
+  display: inline-block;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  margin: 0;
+  font-weight: 400;
+}
+
+.catch_screen {
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(45deg, #d2ffde, #ceefff, #ded1ff);
+  position: fixed;
+  z-index: 0;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  opacity: .3;
+}
+
+.control {
+  position: relative;
+  margin: 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  grid-gap: 20px;
+  flex: 1;
+  align-items: center;
+}
+
+.playground {
+  max-width: 1024px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin: 30px auto;
+  align-items: center;
+}
+
+
+
+.hp {
+  width: 60%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.hp__text {
+  color: #666;
+  display: inline-block;
+  padding-top: 4px;
+  font-size: 14px;
+
+}
+
+.hp__bar {
+  border-radius: 5px;
+  background: #3b778f;
+  border: 1px solid #3b778f;
+  height: 18px;
+  overflow: hidden;
+  width: 100%;
+}
+
+.health {
+  width: 50%;
+  height: 100%;
+  background: -webkit-gradient(linear, left top, right top, from(lime), to(#8bf500));
+  background: linear-gradient(to right, lime, #8bf500);
+  transition: width 0.5s cubic-bezier(0.5,-0.28, 0.4, 1.15);
+}
+
+.health_low {
+  background: -webkit-gradient(linear, left top, right top, from(#ffcc00), to(#f1f500));
+  background: linear-gradient(to right, #ffcc00, #f1f500);
+}
+
+.health_critical {
+  background: -webkit-gradient(linear, left top, right top, from(#d20000), to(#f51700));
+  background: linear-gradient(to right, #d20000, #f51700);
+}
+
+
+
+.logo {
+  max-width: 240px;
+  margin: 30px 20px 0;
+}
+
+.body {
+  position: relative;
+  z-index: 1;
+}
+
+
+.wrap {
+  display: flex;
+  margin: 0 auto;
+  justify-content: center;
+}
+
+.logs {
+  margin: 0 auto;
+  margin-top: 50px;
+  background: rgb(0 0 0 / 50%);
+  padding: 20px;
+  width: 70%;
+  border-radius: 5px;
+  font-size: 18px;
+  font-weight: 400;
+  color: #222;
+  text-align: left;
+}
+
+.logs__text {
+  margin-top: 0;
+  padding: 20px;
+  background: #94ccf4d1;
+  border-radius: 15px;
+}
+
+.logs__text:last-child {
+  border: none;
+  margin-bottom: 0;
+}
+
+
+
+.card {
+  display: inline-block;
+  width: 250px;
+  padding: 1em;
+  border-radius: 15px;
+  margin: 10px;
+  background: #ddd;
+  text-align: left;
+  box-shadow: 0px 5px 20px -10px #111111;
+  position: relative;
+  transition: 0.4s;
+}
+
+.card__caption {
+  background-color: rgba(255, 255, 255, 0.65);
+  padding: 1em;
+  position: relative;
+  border-radius: 0 0 3px 3px;
+}
+
+.card__image-container {
+  text-align: center;
+  padding: 1em 1em 0;
+  border-radius: 3px 3px 0 0;
+  position: relative;
+}
+
+.card__image-container:before {
+  content: "";
+  display: block;
+  position: absolute;
+  opacity: 0.5;
+  width: 120px;
+  height: 80px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background-image: url(./assets/akatsuki.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+
+.card__image {
+  max-height: 150px;
+  margin: auto;
+  display: inline-block;
+  margin-bottom: 20px;
+  z-index: 1;
+  position: relative;
+}
+
+.card__type {
+  position: absolute;
+  top: 0;
+  right: 1em;
+  transform: translateY(-50%);
+  color: #ffffff;
+  text-transform: uppercase;
+  font-family: "Open Sans Condensed", "Open Sans", helvetica, sans-serif;
+  letter-spacing: 0.1em;
+  padding: 0.25em;
+  line-height: 1;
+  border-radius: 2px;
+  background: #bbbbbb;
+}
+
+.card__label {
+  font-size: 10px;
+  text-transform: uppercase;
+  font-weight: 400;
+  display: block;
+  margin-bottom: 3px;
+}
+
+.card__name {
+  font-family: "Open Sans Condensed", "Open Sans", helvetica, sans-serif;
+  text-align: center;
+  font-size: 1.5em;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+.card__stats {
+  margin: 1em 0;
+  width: 100%;
+}
+
+.card__stats th {
+  font-family: "Open Sans Condensed", "Open Sans", helvetica, sans-serif;
+  text-align: right;
+  font-weight: 300;
+}
+
+.card__stats th,
+.card__stats td {
+  width: 50%;
+  padding: 0.25em 0.5em 0;
+}
+
+.card__abilities {
+  display: flex;
+  justify-content: space-between;
+}
+
+.card__ability {
+  margin-top: 1em;
+  flex: 1 0;
+}
+
+.card--normal {
+  background: linear-gradient(110deg, rgb(45 253 90 / 50%) 0%, rgb(65 170 244) 100%);
+  box-shadow: 0px 5px 20px -10px #6b17aa;
+}
+
+.card--normal .card__type {
+  background-color: #F44336;
+}
+
+.card--dark {
+  background: linear-gradient(20deg, rgb(25 25 25 / 0.5) 0%, rgb(16 11 50 / 0.3) 33%, rgb(92 2 73 / 0.8) 100%);
+}
+
+.card--dark .card__type {
+  background: #F44336;
+}
+
+.card:hover {
+  z-index: 5;
+  box-shadow: 0px 13px 30px -15px #000000;
+}
+
+
+
+.button {
+  font-family: "Helvetica", "Arial", sans-serif;
+  display: inline-block;
+  font-size: 1em;
+  padding: 1em 2em;
+  margin-top: 100px;
+  margin-bottom: 60px;
+  -webkit-appearance: none;
+  appearance: none;
+  background-color: #e03b11;
+  color: #fff;
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+  position: relative;
+  transition: transform ease-in 0.1s, box-shadow ease-in 0.25s;
+  box-shadow: 0 2px 25px rgba(255, 184, 40, 0.5);
+}
+.button:focus {
+  outline: 0;
+}
+.button:before, .button:after {
+  position: absolute;
+  content: "";
+  display: block;
+  width: 140%;
+  height: 100%;
+  left: -20%;
+  z-index: -1000;
+  transition: all ease-in-out 0.5s;
+  background-repeat: no-repeat;
+}
+.button:before {
+  display: none;
+  top: -75%;
+  background-image: radial-gradient(circle, #e03b11 20%, transparent 20%), radial-gradient(circle, transparent 20%, #e03b11 20%, transparent 30%), radial-gradient(circle, #e03b11 20%, transparent 20%), radial-gradient(circle, #e03b11 20%, transparent 20%), radial-gradient(circle, transparent 10%, #e03b11 15%, transparent 20%), radial-gradient(circle, #e03b11 20%, transparent 20%), radial-gradient(circle, #e03b11 20%, transparent 20%), radial-gradient(circle, #e03b11 20%, transparent 20%), radial-gradient(circle, #e03b11 20%, transparent 20%);
+  background-size: 10% 10%, 20% 20%, 15% 15%, 20% 20%, 18% 18%, 10% 10%, 15% 15%, 10% 10%, 18% 18%;
+}
+.button:after {
+  display: none;
+  bottom: -75%;
+  background-image: radial-gradient(circle, #e03b11 20%, transparent 20%), radial-gradient(circle, #e03b11 20%, transparent 20%), radial-gradient(circle, transparent 10%, #e03b11 15%, transparent 20%), radial-gradient(circle, #e03b11 20%, transparent 20%), radial-gradient(circle, #e03b11 20%, transparent 20%), radial-gradient(circle, #e03b11 20%, transparent 20%), radial-gradient(circle, #e03b11 20%, transparent 20%);
+  background-size: 15% 15%, 20% 20%, 18% 18%, 20% 20%, 15% 15%, 10% 10%, 20% 20%;
+}
+.button:active {
+  transform: scale(0.9);
+  background-color: #ff3400;
+  box-shadow: 0 2px 25px rgba(255, 184, 40, 0.5);
+}
+.button.animate:before {
+  display: block;
+  animation: topBubbles ease-in-out 0.75s forwards;
+}
+.button.animate:after {
+  display: block;
+  animation: bottomBubbles ease-in-out 0.75s forwards;
+}
+
+@keyframes topBubbles {
+  0% {
+    background-position: 5% 90%, 10% 90%, 10% 90%, 15% 90%, 25% 90%, 25% 90%, 40% 90%, 55% 90%, 70% 90%;
+  }
+  50% {
+    background-position: 0% 80%, 0% 20%, 10% 40%, 20% 0%, 30% 30%, 22% 50%, 50% 50%, 65% 20%, 90% 30%;
+  }
+  100% {
+    background-position: 0% 70%, 0% 10%, 10% 30%, 20% -10%, 30% 20%, 22% 40%, 50% 40%, 65% 10%, 90% 20%;
+    background-size: 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%;
+  }
+}
+@keyframes bottomBubbles {
+  0% {
+    background-position: 10% -10%, 30% 10%, 55% -10%, 70% -10%, 85% -10%, 70% -10%, 70% 0%;
+  }
+  50% {
+    background-position: 0% 80%, 20% 80%, 45% 60%, 60% 100%, 75% 70%, 95% 60%, 105% 0%;
+  }
+  100% {
+    background-position: 0% 90%, 20% 90%, 45% 70%, 60% 110%, 75% 80%, 95% 70%, 110% 10%;
+    background-size: 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%;
+  }
+}
