@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+    content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Ninja Naruto</title>
+</head>
+
+<body>
+  <div class="body">
+    <header>
+      <img class="logo" title="Reset Game" src="<%=require('./assets/naruto_logo.svg')%>" alt="ninja">
+    </header>
+    <div class="playground">
+      <!-- <figure class="card card--normal character">
+        <div class="card__image-container">
+          <img src="https://res.cloudinary.com/digaox5o1/image/upload/v1611014924/naruto_jrwlvd.png" alt="naruto"
+            class="card__image">
+        </div>
+
+        <figcaption class="card__caption">
+          <h1 class="card__name">Наруто</h1>
+
+          <h3 class="card__type">
+            Lvl. 1
+          </h3>
+
+          <table class="card__stats">
+            <tbody>
+              <tr>
+                <th>HP</th>
+                <td>130</td>
+              </tr>
+              <tr>
+                <th>Attack</th>
+                <td>20 - 160</td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="hp">
+            <div class="hp__bar">
+              <div class="health" id="progressbar-character" style="width: 100%;"></div>
+            </div>
+            <span class="hp__text" id="health-character">100 / 100</span>
+          </div>
+
+        </figcaption>
+      </figure>
+      <figure class="card card--dark enemy">
+        <div class="card__image-container">
+          <img src="https://res.cloudinary.com/digaox5o1/image/upload/v1611014890/gaara_pnzqeo.png" alt="gaara"
+            class="card__image">
+        </div>
+
+        <figcaption class="card__caption">
+          <h1 class="card__name">Гаара</h1>
+
+          <h3 class="card__type">
+            Lvl. 1
+          </h3>
+
+          <table class="card__stats">
+            <tbody>
+              <tr>
+                <th>HP</th>
+                <td>180</td>
+              </tr>
+              <tr>
+                <th>Attack</th>
+                <td>20 - 130</td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="progress-bar">
+            <div class="progress-bar--step progress-bar--animate"></div>
+          </div>
+          <div class="hp">
+            <div class="hp__bar">
+              <div class="health" id="progressbar-character" style="width: 100%;"></div>
+            </div>
+            <span class="hp__text" id="health-character">100 / 100</span>
+          </div>
+
+        </figcaption>
+      </figure> -->
+
+      <!-- 
+      <div class="control">
+        <button class="button" id="btn-kick">
+          Rasengan
+        </button>
+
+      </div> -->
+    </div>
+  </div>
+  <div class="logs">
+    <p class="logs__text">Пример сообщения из лога</p>
+    <p class="logs__text">Пример сообщения из лога</p>
+  </div>
+  <div class="catch_screen"></div>
+
+  <template id="card-tempate">
+    <figure class="card card--normal">
+      <div class="card__image-container">
+        <img src="https://res.cloudinary.com/digaox5o1/image/upload/v1611014924/naruto_jrwlvd.png" alt="naruto"
+          class="card__image">
+      </div>
+
+      <figcaption class="card__caption">
+        <h1 class="card__name">Наруто</h1>
+
+        <h3 class="card__type">
+          Lvl. 1
+        </h3>
+
+        <table class="card__stats">
+          <tbody>
+            <tr>
+              <th>HP</th>
+              <td class="card__hp">130</td>
+            </tr>
+            <tr>
+              <th>Attack</th>
+              <td>20 - 160</td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="hp">
+          <div class="hp__bar">
+            <div class="health" id="progressbar-character" style="width: 100%;"></div>
+          </div>
+          <span class="hp__text" id="health-character">100 / 100</span>
+        </div>
+
+      </figcaption>
+    </figure>
+  </template>
+</body>
+
+</html>

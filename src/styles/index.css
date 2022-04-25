@@ -23,7 +23,7 @@ body {
   position: relative;
   padding: 0;
   font-family: "Heebo", sans-serif;
-  background-image: url(./assets/background.png);
+  background-image: url(../assets/background.png);
   background-color: #00c9ba;
   background-size: auto;
   background-repeat: repeat-x;
@@ -207,7 +207,7 @@ h5 {
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-  background-image: url(./assets/akatsuki.png);
+  background-image: url(../assets/akatsuki.png);
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
