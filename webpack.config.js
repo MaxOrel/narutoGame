@@ -10,6 +10,7 @@ module.exports = {
     entry: {
         main: './src/main.js',
     },
+    devtool: 'source-map',
     output: {
         path: path.resolve(__dirname, 'dist'),
         filename: '[name].js',

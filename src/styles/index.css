@@ -406,3 +406,29 @@ h5 {
     background-size: 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%;
   }
 }
+.addCard {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.popup {
+  display: none;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  background-color: #00000046;
+  justify-content: center;
+  align-items: center;
+}
+.popup_opened {
+  display: flex;
+}
+
+.popup__container{
+  background-color: #fff;
+  max-width: 400px;
+  padding: 40px
+}

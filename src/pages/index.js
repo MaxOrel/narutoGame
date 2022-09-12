@@ -1,4 +1,8 @@
-import Card from "../components/Card.js";
+import { Card } from "../components/Card";
+import { PopupWithForm } from "../components/PopupWithForm";
+import { PopupWithImage } from "../components/PopupWithImage";
+import { Section } from "../components/Section";
+const formElement = document.querySelector('.addCard');
 
 const ninjaData = [{
 		name: 'Naruto',
@@ -64,65 +68,50 @@ const ninjaData = [{
 	}
 ]
 
-const containerCard = document.querySelector('.playground');
-
-// function handlerActiveClassToggle(evt) {
-// 	// console.log('evt.currentTarget', evt.currentTarget);
-// 	// console.log('evt.target', evt.target);
-// 	evt.currentTarget.classList.toggle('active');
-// }
-
-// function handlerCardImageOpen(data) {
-// 	console.log(data);
-
-
-// 	// const elementDelete = evt.target.closest('.card');
-
-// 	// const cardName = elementDelete.querySelector('.card__name');
-// 	// const cardImage = elementDelete.querySelector('.card__image');
-
-// 	// cardImage.removeEventListener('click', handlerCardDelete);
-// 	// cardName.removeEventListener('click', handlerActiveClassToggle);
-
-// 	// elementDelete.remove();
-// 	// elementDelete = null;
-// }
-
-
-// function createCard(dataRender){
-// 	// console.log(dataRender);
-// 	const cardTempate = document.querySelector('#card-tempate').content;
-// 	const cardElement = cardTempate.querySelector('.card').cloneNode(true);
-
-// 	const cardName = cardElement.querySelector('.card__name');
-// 	const cardImage = cardElement.querySelector('.card__image');
-// 	const cardHP = cardElement.querySelector('.card__hp');
-
-
-// 	cardName.innerHTML = dataRender.name;
-// 	cardImage.src = dataRender.img;
-// 	cardHP.textContent = dataRender.hp;
-
-// 	cardImage.addEventListener('click', () => handlerCardImageOpen(dataRender));
-
-// 	cardName.addEventListener('click', handlerActiveClassToggle);
-// 	return cardElement;
-// }
+function handleRemoveCard(node){
+	node.remove();
+	node = null;
+}
 
 function handleImageOpenPopup(data) {
-	console.log('Функция переданная извне', data);
-	//работа с попапом используя data
+	popupImageCard.open(data);
+	//методы попапа
 }
 
-function createCard(dataRender) {
-	return new Card(dataRender, '#card-tempate', handleImageOpenPopup).getElement();
+function createCard(dataCard){
+	const newCard = new Card({data: dataCard, handleImageOpenPopup, handleRemoveCard}, '#card-tempate');
+	return newCard.getElement();
 }
 
-// createCard(ninjaData[0])
+function handleFormSubmit(formDataObject) {
+	console.log(formDataObject);
+	section.addItem(createCard(formDataObject), 'before')
+}
 
-ninjaData.forEach((ninja) => {
-	const newCard = createCard(ninja);
-	containerCard.append(newCard);
-});
 
-console.log(123);
+const section = new Section('.playground', (dataItem) => {
+	section.addItem(createCard(dataItem), 'after')
+})
+
+const popupSelectorsAdd = {
+	popupClass: 'popup_type_add',
+	popupActiveClass: 'popup_opened',
+	popupForm: '.popup__form'
+}
+
+const popupSelectorsImage = {
+	popupClass: 'popup_type_image',
+	popupActiveClass: 'popup_opened',
+}
+
+const popupAddCard = new PopupWithForm(popupSelectorsAdd, handleFormSubmit);
+popupAddCard.setEventListeners();
+
+// popupAddCard.open();
+
+const popupImageCard = new PopupWithImage(popupSelectorsImage);
+popupImageCard.setEventListeners();
+
+section.renderItems(ninjaData);
+
+
